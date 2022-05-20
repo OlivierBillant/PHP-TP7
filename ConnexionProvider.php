@@ -15,13 +15,7 @@ public static function getConnexion(){
         echo "<br>Connected";
         var_dump($db->getAttribute(PDO::ATTR_SERVER_VERSION));
     
-        $sql = "SELECT * FROM STOCK";
-        $stmt = $db->query($sql);
-        // $arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        // var_dump($arr);
-    
-        $one = $stmt->fetch(PDO::FETCH_ASSOC);
-        var_dump($one);
+    return $db;
     } catch (PDOException $e) {
         echo "Not Connected";
     }
